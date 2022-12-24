@@ -3,7 +3,7 @@ const introScreen = document.getElementById('intro-screen');
 const navContainer = document.getElementById('nav-container');
 const logo = document.getElementById('logo');
 
-const contactForm = document.getElementById('form');
+const contactForm = document.getElementById('contact-form');
 const contactSuccessMessage = document.getElementById('contact-success-message');
 
 navScrollHandler();
@@ -107,14 +107,15 @@ fadeRightArr.forEach((fadeRight) => {
 
 //  Contact form send to server and respond with success or error
 contactForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Prevent the form from being submitted
+    // Prevent the form from being submitted
+    e.preventDefault();
 
     // Get the form data
     const formData = new FormData(contactForm);
 
     // Send the form data to the server using an XMLHttpRequest
     const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'sendmail.php');
+    xhr.open('POST', '/sendmail.php');
     xhr.onload = function () {
         if (xhr.getResponseHeader('X-Contact-Form-Status') === 'success') {
             // Display a success message
@@ -124,10 +125,11 @@ contactForm.addEventListener('submit', (e) => {
             setTimeout(() => {
                 contactSuccessMessage.classList = 'contact-success-message-hide';
             }, 2000);
-            document.querySelector('.contact-name').value = '';
-            document.querySelector('.contact-email').value = '';
-            document.querySelector('.contact-subject').value = '';
-            document.querySelector('.contact-message').value = '';
+            document.querySelector('#contact-name').value = '';
+            document.querySelector('#contact-phone').value = '';
+            document.querySelector('#contact-email').value = '';
+            document.querySelector('#contact-subject').value = '';
+            document.querySelector('#contact-message').value = '';
         } else {
             contactSuccessMessage.innerHTML =
                 '<span>&#9447;</span> Sorry there was an error, please try again later';

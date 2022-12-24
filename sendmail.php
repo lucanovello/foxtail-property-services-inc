@@ -6,7 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $phone = $_POST['phone'];
   $email = $_POST['email'];
   $subject = $_POST['subject'];
-  $message = $_POST['message'];
+  $finalSubject = 'Message from foxtailpropertyservices.com';
+  $message = "From: $name\nPhone: $phone\nSubject: $subject\n\nMessage:\n" . $_POST['message'];
 
   // Build the email headers
   $headers = "From: $name <$email>\r\n";
@@ -14,9 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $headers .= "X-Mailer: PHP/" . phpversion();
 
   // Send the email
-  mail('luca@lucanovello.com', $subject, $message, $phone, $headers);
+  mail('frank@foxtailpropertyservices.com', $finalSubject, $message, $headers);
 
-  
   // Send a response header to indicate success
   header('X-Contact-Form-Status: success');
 } else {
@@ -24,3 +24,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   header('X-Contact-Form-Status: error');
 }
 ?>
+
+

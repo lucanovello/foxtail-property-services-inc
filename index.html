@@ -319,16 +319,23 @@
                     <form
                         class="contact-form fade-up"
                         action="/sendmail.php"
-                        method="post"
-                        id="form"
+                        method="POST"
+                        id="contact-form"
                     >
                         <div class="form-name">
                             <label class="form-label" for="name">Name</label>
-                            <input class="form-input" type="text" id="name" name="name" required />
+                            <input
+                                class="form-input"
+                                type="text"
+                                id="contact-name"
+                                name="name"
+                                required
+                            />
                         </div>
+
                         <div class="form-phone">
                             <label class="form-label" for="phone">Phone Number</label>
-                            <input class="form-input" type="tel" id="phone" name="phone" />
+                            <input class="form-input" type="tel" id="contact-phone" name="phone" />
                         </div>
 
                         <div class="form-email">
@@ -336,18 +343,27 @@
                             <input
                                 class="form-input"
                                 type="email"
-                                id="email"
+                                id="contact-email"
                                 name="email"
                                 required
                             />
                         </div>
                         <div class="form-subject">
                             <label class="form-label" for="subject">Subject</label>
-                            <input class="form-input" type="text" id="subject" name="subject" />
+                            <input
+                                class="form-input"
+                                type="text"
+                                id="contact-subject"
+                                name="subject"
+                            />
                         </div>
                         <div class="form-message">
                             <label class="form-label" for="message">Message</label>
-                            <textarea class="form-textarea" id="message" name="message"></textarea>
+                            <textarea
+                                class="form-textarea"
+                                id="contact-message"
+                                name="message"
+                            ></textarea>
                         </div>
                         <button class="contact-form-btn">Submit</button>
                     </form>
