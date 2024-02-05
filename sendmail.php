@@ -6,9 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $phone = $_POST['phone'];
   $email = $_POST['email'];
   $subject = $_POST['subject'];
-  $finalSubject = 'Message from foxtailpropertyservices.com';
-  $message = "From: $name\nPhone: $phone\nSubject: $subject\n\nMessage:\n" . $_POST['message'];
-
+  $finalSubject = 'MESSAGE RECEIVED from foxtailpropertyservices.com';
+  $message = "From: $name\nPhone: $phone\nEmail: $email\n\nSubject: $subject\nMessage:\n" . $_POST['message'];
   // Build the email headers
   $headers = "From: $name <$email>\r\n";
   $headers .= "Reply-To: $email\r\n";

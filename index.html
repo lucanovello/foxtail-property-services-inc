@@ -320,14 +320,14 @@
                         class="contact-form fade-up"
                         action="/sendmail.php"
                         method="POST"
-                        id="contact-form"
+                        id="form"
                     >
                         <div class="form-name">
                             <label class="form-label" for="name">Name</label>
                             <input
-                                class="form-input"
+                                class="form-input form-name"
                                 type="text"
-                                id="contact-name"
+                                id="form-name"
                                 name="name"
                                 required
                             />
@@ -335,15 +335,20 @@
 
                         <div class="form-phone">
                             <label class="form-label" for="phone">Phone Number</label>
-                            <input class="form-input" type="tel" id="contact-phone" name="phone" />
+                            <input
+                                class="form-input form-phone"
+                                type="tel"
+                                id="form-phone"
+                                name="phone"
+                            />
                         </div>
 
                         <div class="form-email">
                             <label class="form-label" for="email">Email Address</label>
                             <input
-                                class="form-input"
+                                class="form-input form-email"
                                 type="email"
-                                id="contact-email"
+                                id="form-email"
                                 name="email"
                                 required
                             />
@@ -351,17 +356,17 @@
                         <div class="form-subject">
                             <label class="form-label" for="subject">Subject</label>
                             <input
-                                class="form-input"
+                                class="form-input form-subject"
                                 type="text"
-                                id="contact-subject"
+                                id="form-subject"
                                 name="subject"
                             />
                         </div>
                         <div class="form-message">
                             <label class="form-label" for="message">Message</label>
                             <textarea
-                                class="form-textarea"
-                                id="contact-message"
+                                class="form-textarea form-message"
+                                id="form-message"
                                 name="message"
                             ></textarea>
                         </div>

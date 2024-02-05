@@ -717,12 +717,14 @@ button:active::before {
 
 .contact-success-message-hide,
 .contact-success-message-show {
-    margin-top: 5vh;
     padding: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: center;
+    position: fixed;
+    bottom: 5vh;
+    border: 1px solid white;
     border-radius: 10px;
     background: hsla(130, 30%, 25%, 0.9);
     font-size: 16px;
@@ -730,6 +732,7 @@ button:active::before {
     text-align: center;
     color: white;
     transition: 0.5s ease;
+    z-index: 9999999;
 }
 
 .contact-success-message-hide {
